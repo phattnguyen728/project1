@@ -1,8 +1,10 @@
 from django.shortcuts import render
 from projects.models import Project
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 
+@login_required
 def projects_list(request):
     list = Project.objects.all()
     context = {
