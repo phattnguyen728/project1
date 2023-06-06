@@ -4,6 +4,9 @@
     <main>
         <div>
             <h1>My Projects</h1>
+            <div>
+                <p><a href="{% url 'create_project' %}">Create project</a></p>
+            </div>
             {% if list|length %}
                 <table>
                     <thead>
