@@ -5,6 +5,8 @@ from projects.models import Project
 
 
 admin.site.register(Project)
+
+
 class ProjectAdmin(admin.ModelAdmin):
     list_display = (
         "name",
