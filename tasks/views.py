@@ -3,6 +3,7 @@ from tasks.forms import TaskForm
 from django.contrib.auth.decorators import login_required
 from tasks.models import Task
 
+
 @login_required
 def create_task(request):
     if request.method == "POST":
@@ -17,9 +18,10 @@ def create_task(request):
     }
     return render(request, "tasks/create.html", context)
 
+
 @login_required
 def my_tasks(request):
-    tasks = Task.objects.filter(assignee = request.user)
+    tasks = Task.objects.filter(assignee=request.user)
     context = {
         "tasks": tasks,
     }
